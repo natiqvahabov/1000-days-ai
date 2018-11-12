@@ -87,3 +87,22 @@ new_row_pred = classifier.predict(new_node_X)
 new_row_pred = (new_row_pred>0.5)
 print(new_row_pred) # False
 
+# Evaluating the ANN, 10 fold cross validation
+from keras.wrappers.scikit_learn import KerasClassifier
+from sklearn.model_selection import cross_val_score
+from keras.models import Sequential
+from keras.layers import Dense
+
+def build_classifier():
+    classifier = Sequential()
+    classifier.add(Dense(units=6, init='uniform', activation='relu', input_dim=11))
+    classifier.add(Dense(units=6, init='uniform', activation='relu'))
+    classifier.add(Dense(units=1, init='uniform', activation='sigmoid'))
+    classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+    return classifier
+
+classifier = KerasClassifier(build_fn=build_classifier, batch_size=10, epochs=100)
+accuracies = cross_val_score(estimator=classifier, X=X_train, y=y_train, cv=10,n_jobs=1)
+mean = accuracies.mean() # 0.8352499946579337
+variance = accuracies.std() # 0.012634278179076582
+
