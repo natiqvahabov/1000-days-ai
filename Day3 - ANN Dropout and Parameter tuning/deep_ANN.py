@@ -111,7 +111,7 @@ variance = accuracies.std() # 0.012634278179076582
 
 from keras.layers import Dropout
 
-#adding dropout to first 2 hidden layers
+# adding Dropout to 2 hidden layers
 def build_classifier():
     classifier = Sequential()
     classifier.add(Dense(units=6, init='uniform', activation='relu', input_dim=11))
@@ -121,3 +121,26 @@ def build_classifier():
     classifier.add(Dense(units=1, init='uniform', activation='sigmoid'))
     classifier.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return classifier
+
+# parameter regularization
+from sklearn.model_selection import GridSearchCV
+
+def build_classifier(optimizer):
+    classifier = Sequential()
+    classifier.add(Dense(units=6, init='uniform', activation='relu', input_dim=11))
+    classifier.add(Dense(units=6, init='uniform', activation='relu'))
+    classifier.add(Dense(units=1, init='uniform', activation='sigmoid'))
+    classifier.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+    return classifier
+
+classifier = KerasClassifier(build_fn=build_classifier)
+parameters = {'batch_size': [25, 12],
+              'epochs': [100, 500],
+              'optimizer': ['adam', 'rmsprop']}
+
+grid_search = grid_search.fit(X_train, y_train)
+best_parameters = grid_search.best_params_
+best_accuracy = grid_search.best_score_
+
+
+
