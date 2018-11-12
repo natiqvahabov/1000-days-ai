@@ -81,6 +81,7 @@ cm = confusion_matrix(y_test,y_pred.round())
 # ------------------------   Day2   -----------------------------
 
 # predict new entered row
+import numpy
 new_node_X = [0,0,619,1,40,3,60000,2,1,1,50000]
 new_node_X = sc.transform(np.reshape(new_node_X,(11,1)).T)
 new_row_pred = classifier.predict(new_node_X)
