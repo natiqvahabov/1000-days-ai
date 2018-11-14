@@ -5,6 +5,40 @@ We have used several hyperparameters in both training and testing of our model w
 <img width="633" alt="screen shot 2018-11-14 at 10 15 31 am" src="https://user-images.githubusercontent.com/5506152/48467335-05d19500-e802-11e8-887a-ff9695398081.png">
 
 # PSO
+• Introduced by Kennedy & Eberhart 1995
+• Inspired by social behavior and movement
+dynamics of insects, birds and fish
+• Global gradient-less stochastic search method
+• Suited to continuous variable problems
+• Performance comparable to Genetic algorithms
+• Has successfully been applied to a wide variety
+of problems (Neural Networks, Structural opt.,
+Shape topology opt.)
+
+### PSO applications
+• Training of neural networks
+  – Identification of Parkinson’s disease
+  – Extraction of rules from fuzzy networks
+  – Image recognition
+• Optimization of electric power distribution
+networks
+• Structural optimization
+  – Optimal shape and sizing design
+  – Topology optimization
+• Process biochemistry
+• System identification in biomechanics
+
+### Advantages and Disadvantages
+• Advantages
+  – Insensitive to scaling of design variables
+  – Simple implementation
+  – Easily parallelized for concurrent processing
+  – Derivative free
+  – Very few algorithm parameters
+  – Very efficient global search algorithm
+• Disadvantages
+  – Slow convergence in refined search stage (weak
+  local search ability)
 
 <img width="1161" alt="screen shot 2018-11-14 at 11 24 29 am" src="https://user-images.githubusercontent.com/5506152/48467342-066a2b80-e802-11e8-8e04-35a6a07578ba.png">
 
@@ -25,3 +59,4 @@ References:
 1. https://en.wikipedia.org/wiki/Swarm_intelligence
 2. https://www.youtube.com/watch?v=JhgDMAm-imI 
 3. https://www.youtube.com/watch?v=LU_KD1enR3Q
+4. Schutte, Jaco F. "The Particle Swarm Optimization Algorithm." Structural Optimization (2005).
