@@ -46,7 +46,8 @@ networks
   – Slow convergence in refined search stage (weak
   local search ability)
   
- PSO Keywords-> partical, position vector, velocity vector, inertia, cognitive component, social component
+### PSO Keywords
+partical, position vector, velocity vector, inertia, cognitive component, social component
 
 <img width="1161" alt="screen shot 2018-11-14 at 11 24 29 am" src="https://user-images.githubusercontent.com/5506152/48467342-066a2b80-e802-11e8-8e04-35a6a07578ba.png">
 
