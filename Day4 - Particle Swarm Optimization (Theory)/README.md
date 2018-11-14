@@ -19,3 +19,9 @@ We have used several hyperparameters in both training and testing of our model w
 <img width="1156" alt="screen shot 2018-11-14 at 11 21 19 am" src="https://user-images.githubusercontent.com/5506152/48467337-05d19500-e802-11e8-9e3f-23572df6f362.png">
 
 <img width="1048" alt="screen shot 2018-11-14 at 11 21 00 am" src="https://user-images.githubusercontent.com/5506152/48467336-05d19500-e802-11e8-8af7-30a9b978215e.png">
+
+
+References:
+1. https://en.wikipedia.org/wiki/Swarm_intelligence
+2. https://www.youtube.com/watch?v=JhgDMAm-imI 
+3. https://www.youtube.com/watch?v=LU_KD1enR3Q
