@@ -65,3 +65,25 @@ classifier.fit_generator(
         epochs=25,
         validation_data=test_set,
         validation_steps=2000)
+
+# For large epoches we should have GPU, with limited CPU I dared for only 2 epoches, it took near 2 hours.
+# Epoch 1/2
+# 8000/8000 [==============================] - 2522s 315ms/step - loss: 0.3534 - acc: 0.8332 - val_loss: 0.5892 - val_acc: 0.8030
+# Epoch 2/2
+# 7999/8000 [============================>.] - ETA: 0s - loss: 0.1012 - acc: 0.9620
+
+
+# predict individual test
+from keras.preprocessing import image
+test_image = image.load_img('dataset/single_prediction/cat_or_dog_1.jpg', target_size=(64, 64))
+test_image = image.img_to_array(test_image)
+test_image = np.expand_dims(test_image, axis=0)
+result = classifier.predict(test_image)
+
+if result[0][0] == 1:
+    prediction = 'dog'
+else:
+    prediction = 'cat'
+
+# DOG - correct
+
