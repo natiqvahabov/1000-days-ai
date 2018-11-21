@@ -1,3 +1,11 @@
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Nov 20 18:42:46 2018
+@author: natig
+"""
+
 # Hybrid Deep Learning Model
 
 # Part1 - Identify the Frauds with the Self-Organizing Map
