@@ -1,1 +1,1 @@
-# 1000-days-ai
+# 1000-days-test
