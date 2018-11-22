@@ -1,6 +1,6 @@
 # Hybrid Deep Learning Model
 
-In order to compute each customer leaving probability (regression issue) we will use Artificial Neural Network with the result of Self-Orginised Map. It's called Hybrid Neural Network. The term hybrid neural network can have two meanings:
+In order to compute each customer fraud probability (regression issue) we will use Artificial Neural Network with the result of Self-Orginised Map. It's called Hybrid Neural Network. The term hybrid neural network can have two meanings:
 1 - Biological neural networks interacting with artificial neuronal models, and
 2 - Artificial neural networks with a symbolic part (or, conversely, symbolic computations with a connectionist part).
 
