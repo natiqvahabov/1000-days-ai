@@ -12,14 +12,13 @@ Day1 - Day15 based on 'Deep Learning A-Z™: Hands-On Artificial Neural Networks
 - CS229 Supplemental Lecture notes [pdf](http://cs229.stanford.edu/extra-notes/representer-function.pdf)
 - Hoeffding's inequality [pdf](http://cs229.stanford.edu/extra-notes/hoeffding.pdf)
 ### Section Notes
-- Linear Algebra Review and Reference [pdf]
-- Probability Theory Review [pdf]
-- Convex Optimization Overview, Part I [ps] [pdf]
-- Convex Optimization Overview, Part II [ps] [pdf]
-- Hidden Markov Models [ps] [pdf]
-- The Multivariate Gaussian Distribution [pdf]
-- More on Gaussian Distribution [pdf]
-- Gaussian Processes [pdf]
+- Linear Algebra Review and Reference [pdf](http://cs229.stanford.edu/section/cs229-linalg.pdf)
+- Probability Theory Review [pdf](http://cs229.stanford.edu/section/cs229-prob.pdf)
+- Convex Optimization Overview, Part I [ps] [pdf](http://cs229.stanford.edu/section/cs229-cvxopt2.pdf)
+- Hidden Markov Models [ps] [pdf](http://cs229.stanford.edu/section/cs229-hmm.pdf)
+- The Multivariate Gaussian Distribution [pdf](http://cs229.stanford.edu/section/gaussians.pdf)
+- More on Gaussian Distribution [pdf](http://cs229.stanford.edu/section/more_on_gaussians.pdf)
+- Gaussian Processes [pdf](http://cs229.stanford.edu/section/cs229-gaussian_processes.pdf)
 ### Other Resources
 - Advice on applying machine learning: Slides from Andrew's lecture on getting machine learning algorithms to work in practice can be found here.
 - Projects: A list of last year's final projects can be found here.
