@@ -8,10 +8,9 @@ Day1 - Day15 based on 'Deep Learning A-Z™: Hands-On Artificial Neural Networks
 ## Stanford University Machine Learning course Spring 2017
 ### Supplementary Notes
 - Binary classification with +/-1 labels [pdf](http://cs229.stanford.edu/extra-notes/loss-functions.pdf)
-- Boosting algorithms and weak learning [pdf]
-- Functional after implementing stump_booster.m in PS2. [here]
-- The representer theorem [pdf]
-- Hoeffding's inequality [pdf]
+- Boosting algorithms and weak learning [pdf](http://cs229.stanford.edu/extra-notes/boosting.pdf)
+- CS229 Supplemental Lecture notes [pdf](http://cs229.stanford.edu/extra-notes/representer-function.pdf)
+- Hoeffding's inequality [pdf](http://cs229.stanford.edu/extra-notes/hoeffding.pdf)
 ### Section Notes
 - Linear Algebra Review and Reference [pdf]
 - Probability Theory Review [pdf]
