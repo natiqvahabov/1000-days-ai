@@ -7,7 +7,7 @@ Day1 - Day15 based on 'Deep Learning A-Z™: Hands-On Artificial Neural Networks
 
 ## Stanford University Machine Learning course Spring 2017
 Supplementary Notes
-Binary classification with +/-1 labels [pdf] (http://cs229.stanford.edu/extra-notes/loss-functions.pdf)
+Binary classification with +/-1 labels [pdf](http://cs229.stanford.edu/extra-notes/loss-functions.pdf)
 Boosting algorithms and weak learning [pdf]
 Functional after implementing stump_booster.m in PS2. [here]
 The representer theorem [pdf]
