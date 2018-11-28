@@ -5,7 +5,7 @@ Day1 - Day15 based on 'Deep Learning A-Z™: Hands-On Artificial Neural Networks
 ### Certification of Completion
 ![uc-ojx65sek](https://user-images.githubusercontent.com/5506152/49083553-603d0d80-f266-11e8-9779-dba1f76337c1.jpg)
 
-## Stanford University Machine Learning course Spring 2017 [link](http://cs229.stanford.edu/syllabus.html)
+## Stanford University Machine Learning course Autumn 2018 [link](http://cs229.stanford.edu/syllabus.html)
 ### Books
 - The Elements of Statistical Learning [pdf](https://web.stanford.edu/~hastie/Papers/ESLII.pdf)
 ### Class Notes
