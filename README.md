@@ -14,14 +14,13 @@ Day1 - Day15 based on 'Deep Learning A-Z™: Hands-On Artificial Neural Networks
 ### Section Notes
 - Linear Algebra Review and Reference [pdf](http://cs229.stanford.edu/section/cs229-linalg.pdf)
 - Probability Theory Review [pdf](http://cs229.stanford.edu/section/cs229-prob.pdf)
-- Convex Optimization Overview, Part I [ps] [pdf](http://cs229.stanford.edu/section/cs229-cvxopt2.pdf)
-- Hidden Markov Models [ps] [pdf](http://cs229.stanford.edu/section/cs229-hmm.pdf)
+- Convex Optimization Overview [pdf](http://cs229.stanford.edu/section/cs229-cvxopt2.pdf)
+- Hidden Markov Models [pdf](http://cs229.stanford.edu/section/cs229-hmm.pdf)
 - The Multivariate Gaussian Distribution [pdf](http://cs229.stanford.edu/section/gaussians.pdf)
 - More on Gaussian Distribution [pdf](http://cs229.stanford.edu/section/more_on_gaussians.pdf)
 - Gaussian Processes [pdf](http://cs229.stanford.edu/section/cs229-gaussian_processes.pdf)
 ### Other Resources
-- Advice on applying machine learning: Slides from Andrew's lecture on getting machine learning algorithms to work in practice can be found here.
-- Projects: A list of last year's final projects can be found here.
-- Data: Here is the UCI Machine learning repository, which contains a large collection of standard datasets for testing learning algorithms. If you want to see examples of recent work in machine learning, start by taking a look at the conferences NIPS(all old NIPS papers are online) and ICML. Some other related conferences include UAI, AAAI, IJCAI.
-- Viewing PostScript and PDF files: Depending on the computer you are using, you may be able to download a PostScript viewer or PDF viewer for it if you don't already have one.
-- Machine learning study guides tailored to CS 229 by Afshine Amidi and Shervine Amidi.
+- Advice on applying machine learning: Slides from Andrew's lecture on getting machine learning algorithms to work in practice can be found [here](http://cs229.stanford.edu/materials/ML-advice.pdf).
+- Projects: A list of last year's final projects can be found [here](http://cs229.stanford.edu/proj2017/index.html).
+- Data: Here is the [UCI Machine learning repository](http://archive.ics.uci.edu/ml/index.php), which contains a large collection of standard datasets for testing learning algorithms. If you want to see examples of recent work in machine learning, start by taking a look at the conferences [NIPS](https://nips.cc/)(all old NIPS papers are online) and ICML. Some other related conferences include UAI, AAAI, IJCAI.
+- [Machine learning study guides](https://stanford.edu/~shervine/teaching/cs-229/cheatsheet-supervised-learning) tailored to CS 229 by Afshine Amidi and Shervine Amidi.
