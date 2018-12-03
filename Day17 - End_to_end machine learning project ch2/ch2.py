@@ -93,3 +93,53 @@ from pandas.plotting import scatter_matrix
 attributes = ["median_house_value", "median_income", "total_rooms",
               "housing_median_age"]
 scatter_matrix(ds_cp[attributes], figsize=(12, 8))
+
+# create new attributes
+dataset["rooms_per_household"] = dataset["total_rooms"]/dataset["households"]
+dataset["bedrooms_per_room"] = dataset["total_bedrooms"]/dataset["total_rooms"]
+dataset["population_per_household"]=dataset["population"]/dataset["households"]
+
+corr_matrix = dataset.corr()
+corr_matrix["median_house_value"].sort_values(ascending=False)
+
+housing = strat_train_set.drop("median_house_value", axis=1)
+housing_labels = strat_train_set["median_house_value"].copy()
+
+# take care of missing values
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy="median")
+
+# drop categorical data from dataset
+housing_num = housing.drop("ocean_proximity", axis=1)
+
+imputer.fit(housing_num)
+imputer.statistics_
+
+X = imputer.transform(housing_num)
+
+'''
+SKLEARN Design well orginized:
+    - Consistency (Estimators, Transformers, Predictors)
+              imputer is estimator, imputer.fit, imputer.transform, imputer.predict
+    - Inspection (imputer.strategy, imputer.statistics_)
+    - Nonproliferation of classes
+    - Composition
+    - Sensible defaults.
+'''
+
+
+# Handling Text and Categorical Attributes
+housing_cat = housing[["ocean_proximity"]]
+housing_cat.head(10)
+
+# conver text to numbers by using OrdinalEncoder
+from sklearn.preprocessing import OrdinalEncoder
+ord_enc = OrdinalEncoder()
+housing_cat_encoded = ord_enc.fit_transform(housing_cat)
+housing_cat_encoded[:10]
+
+# onehotencoder
+# toarray() convert sparse matrix to numpy array
+from sklearn.preprocessing import OneHotEncoder
+one_hot_encoder = OneHotEncoder()
+housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat).toarray()
