@@ -143,3 +143,48 @@ housing_cat_encoded[:10]
 from sklearn.preprocessing import OneHotEncoder
 one_hot_encoder = OneHotEncoder()
 housing_cat_1hot = one_hot_encoder.fit_transform(housing_cat).toarray()
+
+# feature scaling
+#There are two common ways to get all attributes to have the same scale:
+#                       min-max scaling and standardization.
+# min-max scaling is also called normalization
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+num_pipeline = Pipeline([
+        ('imputer', SimpleImputer(strategy="median")),
+        ('std_scaler', StandardScaler()),
+    ])
+housing_num_tr = num_pipeline.fit_transform(housing_num)
+
+# ColumnTransformer
+from sklearn.compose import ColumnTransformer
+
+num_attribs = list(housing_num)
+cat_attribs = ["ocean_proximity"]
+
+full_pipeline = ColumnTransformer([
+        ("num", num_pipeline, num_attribs),
+        ("cat", OneHotEncoder(), cat_attribs),
+    ])
+
+housing_prepared = full_pipeline.fit_transform(housing)
+
+# Training the model
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+
+some_data = dataset.iloc[:5]
+some_labels = housing_labels.iloc[:5]
+some_data_prepared = full_pipeline.transform(some_data)
+print("Predictions:", lin_reg.predict(some_data_prepared))
+print("Labels:", list(some_labels))
+
+# calculate mean squared error
+from sklearn.metrics import mean_squared_error
+housing_predictions = lin_reg.predict(housing_prepared)
+lin_mse = mean_squared_error(housing_labels, housing_predictions)
+lin_rmse = np.sqrt(lin_mse)
+lin_rmse
+# 69050
+# RESULT SHOW UNDERFITTING BECAUSE OF NOT ACCURACY RESUL, WE SHOULD USE COMPLICATED MODEL
