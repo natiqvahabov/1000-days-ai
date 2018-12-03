@@ -188,3 +188,51 @@ lin_rmse = np.sqrt(lin_mse)
 lin_rmse
 # 69050
 # RESULT SHOW UNDERFITTING BECAUSE OF NOT ACCURACY RESUL, WE SHOULD USE COMPLICATED MODEL
+
+# Let's use Decision Tree, non-linear model
+from sklearn.tree import DecisionTreeRegressor
+tree_reg = DecisionTreeRegressor()
+tree_reg.fit(housing_prepared, housing_labels)
+
+# make prediction with dec_tree
+housing_predictions = tree_reg.predict(housing_prepared)
+
+# rmse with dec_tree
+tree_mse = mean_squared_error(housing_labels, housing_predictions)
+tree_rmse = np.sqrt(tree_mse)
+tree_rmse
+# 0.0
+# IT SHOWED OVERFITTING RESULT.
+
+# use 10-fold cross-validation
+from sklearn.model_selection import cross_val_score
+scores = cross_val_score(tree_reg, housing_prepared, housing_labels,
+                         scoring="neg_mean_squared_error", cv=10)
+tree_rmse_scores = np.sqrt(-scores)
+
+'''
+Scikit-Learn’s cross-validation features expect a utility function (greater is better)
+rather than a cost function (lower is better), so the scoring function is actually
+the opposite of the MSE (i.e., a negative value), which is why the preceding 
+code computes -scores before calculating the square root.
+'''
+
+tree_rmse_scores.mean()
+# 70033
+tree_rmse_scores.std()
+# 2655
+
+# Decision Tree gave much more bad result than Linear Regression
+# now let's use random forest
+
+from sklearn.ensemble import RandomForestRegressor
+forest_reg = RandomForestRegressor()
+forest_reg.fit(housing_prepared, housing_labels)
+
+housing_predictions = forest_reg.predict(housing_prepared)
+forest_mse = mean_squared_error(housing_labels, housing_predictions)
+forest_rmse = np.sqrt(forest_mse)
+
+# 21806 
+# That gaved much more accurate result rather 2 previous models: Linear and DTree
+
