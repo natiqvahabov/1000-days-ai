@@ -236,3 +236,58 @@ forest_rmse = np.sqrt(forest_mse)
 # 21806 
 # That gaved much more accurate result rather 2 previous models: Linear and DTree
 
+# Using GridSearchCV for finding best hyperparameters
+from sklearn.model_selection import GridSearchCV
+
+param_grid = [
+    {'n_estimators': [3, 10, 30], 'max_features': [2, 4, 6, 8]},
+    {'bootstrap': [False], 'n_estimators': [3, 10], 'max_features': [2, 3, 4]},
+  ]
+
+forest_reg = RandomForestRegressor()
+
+grid_search = GridSearchCV(forest_reg, param_grid, cv=5,
+                           scoring='neg_mean_squared_error',
+                           return_train_score=True)
+
+grid_search.fit(housing_prepared, housing_labels)
+
+grid_search.best_params_
+# {'max_features': 8, 'n_estimators': 30}
+
+grid_search.best_estimator_
+'''
+RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+           max_features=8, max_leaf_nodes=None, min_impurity_decrease=0.0,
+           min_impurity_split=None, min_samples_leaf=1,
+           min_samples_split=2, min_weight_fraction_leaf=0.0,
+           n_estimators=30, n_jobs=None, oob_score=False,
+           random_state=None, verbose=0, warm_start=False)
+'''
+
+# look at each result
+cvres = grid_search.cv_results_
+for mean_score, params in zip(cvres["mean_test_score"], cvres["params"]):
+    print(np.sqrt(-mean_score), params)
+    
+'''
+64446.92237885503 {'max_features': 2, 'n_estimators': 3}
+55111.01664184465 {'max_features': 2, 'n_estimators': 10}
+52864.16217859041 {'max_features': 2, 'n_estimators': 30}
+60550.46532054315 {'max_features': 4, 'n_estimators': 3}
+52780.00459507404 {'max_features': 4, 'n_estimators': 10}
+50871.9101975998 {'max_features': 4, 'n_estimators': 30}
+58952.24415819549 {'max_features': 6, 'n_estimators': 3}
+52943.89258986576 {'max_features': 6, 'n_estimators': 10}
+50210.987226964084 {'max_features': 6, 'n_estimators': 30}
+58226.967896915376 {'max_features': 8, 'n_estimators': 3}
+52657.386082237244 {'max_features': 8, 'n_estimators': 10}
+50207.38057065243 {'max_features': 8, 'n_estimators': 30}
+62367.54070316257 {'bootstrap': False, 'max_features': 2, 'n_estimators': 3}
+54088.88616936969 {'bootstrap': False, 'max_features': 2, 'n_estimators': 10}
+60529.84778260889 {'bootstrap': False, 'max_features': 3, 'n_estimators': 3}
+52841.96575684903 {'bootstrap': False, 'max_features': 3, 'n_estimators': 10}
+59692.12892015442 {'bootstrap': False, 'max_features': 4, 'n_estimators': 3}
+52246.603283102144 {'bootstrap': False, 'max_features': 4, 'n_estimators': 10}
+'''
+
